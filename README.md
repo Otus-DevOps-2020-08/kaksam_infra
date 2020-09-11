@@ -59,3 +59,14 @@ appuser@someinternalhost:~$
 For permanent =):
 
 `kaksam@kaksam:~/.ssh$ echo "alias someinternalhost=\"ssh someinternalhost\"" >> ~/.bashrc`
+
+
+----------------------
+SSL validation:
+`sudo echo 178.154.226.134 178.154.226.134.sslip.io >> /etc/hosts`
+
+Open https://178.154.226.134/ Setting > Add 178.154.226.134.sslip.io to Lets Encrypt Domain
+
+`ssh -i ~/.ssh/appuser appuser@10.130.0.17`
+
+works correctly after ovpn established
