@@ -3,7 +3,7 @@ kaksam Infra repository
 
 bastion_IP = 178.154.226.134
 
-someinternalhost_IP = 10.130.0.17
+someinternalhost_IP = 10.130.0.17ls
 
 You can use this command for connection to someinternalhost through bastion
 
