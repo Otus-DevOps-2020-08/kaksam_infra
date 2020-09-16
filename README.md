@@ -4,7 +4,7 @@ kaksam Infra repository
 
 HW #5
 
-testapp_IP = 84.201.157.129
+testapp_IP = 84.201.157.109
 
 testapp_port = 9292
 
