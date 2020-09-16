@@ -5,7 +5,7 @@ users:
     shell: /bin/bash
     sudo: ['ALL=(ALL) NOPASSWD:ALL']
     ssh-authorized-keys:
-      - ssh-rsa AAAB3NzaC1yc2EAAAADAQABAAABgQCtqMGQ+f8qpWrYAao9r/mxYq7IAAaK6c1xQ2N2XcO2SeeGhD3KpSqz67L9ItCwSVrEIwZhLHpL2L0klfi943n2pLqfPZ6K0ktpxUP6pdZu+eL57eTjHOxo1ElGrP8FNmbRg4wIQUTcjqF5oGothbuDVqV2SkxTeWUxFMUxZ4nIv3i08mtjzBipOHh5NpqICCIB3UjUJCwfMojzWS3JAbszFcwmegMySp3Yb2Qi6sRa/vTR7j6QpBbWZuJ1SEQma/BfD1gdDKjLAJJm1UE/wMBtiJ6DEGkDAPgwWnxH8zGpfBMnbX9UwAaEdMzkto/A7UXUvxzPfiPi5gnxUpfmdt9ijwm4YTXDQyaOrHZWsQXkpWL0m0walhBNd72Aub2/InD75klWdGPMs0SZVoCo+cN+Nga8gRzhwMlkcJjeO4m/b8kie90DgS3FdrBZHEGfHm5DC19ra9s4DD90x5V6BzZU6Ew/AV0zi8dHw1ioB01RfzSk6d4ctgZpoPLbKpgcmEU= appuser
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCtqMGQ+f8qpWrYAao9r/mxYq7IAAaK6c1xQ2N2XcO2SeeGhD3KpSqz67L9ItCwSVrEIwZhLHpL2L0klfi943n2pLqfPZ6K0ktpxUP6pdZu+eL57eTjHOxo1ElGrP8FNmbRg4wIQUTcjqF5oGothbuDVqV2SkxTeWUxFMUxZ4nIv3i08mtjzBipOHh5NpqICCIB3UjUJCwfMojzWS3JAbszFcwmegMySp3Yb2Qi6sRa/vTR7j6QpBbWZuJ1SEQma/BfD1gdDKjLAJJm1UE/wMBtiJ6DEGkDAPgwWnxH8zGpfBMnbX9UwAaEdMzkto/A7UXUvxzPfiPi5gnxUpfmdt9ijwm4YTXDQyaOrHZWsQXkpWL0m0walhBNd72Aub2/InD75klWdGPMs0SZVoCo+cN+Nga8gRzhwMlkcJjeO4m/b8kie90DgS3FdrBZHEGfHm5DC19ra9s4DD90x5V6BzZU6Ew/AV0zi8dHw1ioB01RfzSk6d4ctgZpoPLbKpgcmEU= appuser
 
 write_files:
   - path: /home/appuser/install_ruby.sh
@@ -14,7 +14,6 @@ write_files:
       #!/bin/bash
       apt-get update
       apt-get install -y ruby-full ruby-bundler build-essential
-    owner: appuser:appuser
   - path: /home/appuser/install_mongodb.sh
     permissions: "0744"
     content: |
@@ -26,7 +25,6 @@ write_files:
       apt-get install -y mongodb-org
       systemctl start mongod
       systemctl enable mongod
-    owner: appuser:appuser
   - path: /home/appuser/deploy.sh
     permissions: "0744"
     content: |
@@ -35,9 +33,8 @@ write_files:
       git clone -b monolith https://github.com/express42/reddit.git
       cd reddit && bundle install
       puma -d
-    owner: appuser:appuser
 
 runcmd:
-  - /home/appuser/install_ruby.sh
-  - /home/appuser/install_mongodb.sh
-  - /home/appuser/deploy.sh
+  - sudo /home/appuser/install_ruby.sh
+  - sudo /home/appuser/install_mongodb.sh
+  - sudo /home/appuser/deploy.sh
