@@ -1,6 +1,10 @@
 # kaksam_infra
 kaksam Infra repository
 
+testapp_IP = 35.198.167.169
+
+testapp_port = 9292
+
 bastion_IP = 178.154.226.134
 
 someinternalhost_IP = 10.130.0.17
