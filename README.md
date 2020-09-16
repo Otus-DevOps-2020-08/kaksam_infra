@@ -1,9 +1,16 @@
 # kaksam_infra
 kaksam Infra repository
 
+
+HW #5
+
 testapp_IP = 84.201.157.129
 
 testapp_port = 9292
+
+
+HW #4
+
 
 bastion_IP = 178.154.226.134
 
