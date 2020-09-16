@@ -2,14 +2,21 @@
 kaksam Infra repository
 
 
-HW #5
+**HW #5**
 
-testapp_IP = 84.201.157.109
+testapp_IP = 84.201.157.109 testapp_port = 9292
 
-testapp_port = 9292
+Scripts for autoinstall are created
 
-add metadata
-HW #4
+```
+install_ruby.sh
+install_mongodb.sh
+deploy.sh
+```
+
+File with metadata created.
+
+**HW #4**
 
 
 bastion_IP = 178.154.226.134
