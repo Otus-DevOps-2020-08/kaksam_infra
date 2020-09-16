@@ -14,7 +14,7 @@ write_files:
       #!/bin/bash
       apt-get update
       apt-get install -y ruby-full ruby-bundler build-essential
-#    owner: appuser:appuser
+    owner: appuser:appuser
   - path: /home/appuser/install_mongodb.sh
     permissions: "0744"
     content: |
@@ -31,11 +31,11 @@ write_files:
     permissions: "0744"
     content: |
       #!/bin/bash
-      apt-get instal -y git
+      apt-get install -y git
       git clone -b monolith https://github.com/express42/reddit.git
       cd reddit && bundle install
       puma -d
-#    owner: appuser:appuser
+    owner: appuser:appuser
 
 runcmd:
   - /home/appuser/install_ruby.sh
