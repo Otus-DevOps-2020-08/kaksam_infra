@@ -1,7 +1,7 @@
 # kaksam_infra
 kaksam Infra repository
 
-testapp_IP = 35.198.167.169
+testapp_IP = 84.201.157.129
 
 testapp_port = 9292
 
