@@ -1,0 +1,12 @@
+[Unit]
+Description= Puma
+After=network.target
+
+[Service]
+Type=forking
+User=ubuntu
+ExecStart=/usr/local/bin/puma --dir /home/ubuntu/reddit -d
+KillMode=process
+
+[Install]
+WantedBy=multi-user.target

@@ -1,6 +1,26 @@
 # kaksam_infra
+
 kaksam Infra repository
 
+**HW #6**
+
+    * packer installed
+    * created service acc for packer
+    * created template and variables files(added to .gitignore)
+    * created fake variable file
+    * was used "pauser_befor" for apt conflict
+
+for create immutable image:
+
+`packer build -var-file=variables.json immutable.json `
+
+for create VM from image:
+
+`.config-scripts/create-reddit-vm.sh`
+
+to check:
+
+`http://130.193.50.243:9292/`
 
 **HW #5**
 
