@@ -1,6 +1,13 @@
 # kaksam_infra
 
 kaksam Infra repository
+**HW #7**
+
+    * install terraform
+    * created main.tf for describe instance
+    * created outputs.tf fot output prints
+    * created lb.tf for dynamyc creating loadbalancer 
+    * LB was checked 
 
 **HW #6**
 
