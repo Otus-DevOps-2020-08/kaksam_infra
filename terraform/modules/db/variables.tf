@@ -8,3 +8,7 @@ variable db_disk_image {
 variable subnet_id {
   description = "Subnets for modules"
 }
+variable "name" {
+  description = "Environment name"
+  type        = string
+}

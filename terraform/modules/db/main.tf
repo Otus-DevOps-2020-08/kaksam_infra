@@ -1,7 +1,8 @@
 # create VM with special image DB and our VPC
 
 resource "yandex_compute_instance" "db" {
-  name = "reddit-db"
+  name = "reddit-db-${var.name}"
+
   labels = {
     tags = "reddit-db"
   }

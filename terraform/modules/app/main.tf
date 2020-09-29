@@ -1,6 +1,6 @@
 # create VM with special image APP and our VPC
 resource "yandex_compute_instance" "app" {
-  name = "reddit-app"
+  name = "reddit-app-${var.name}"
 
   labels = {
     tags = "reddit-app"
