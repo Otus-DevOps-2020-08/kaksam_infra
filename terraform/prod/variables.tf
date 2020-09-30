@@ -45,3 +45,9 @@ variable "name" {
   description = "Environment name"
   type        = string
 }
+variable "storage_access_key" {
+  description = "storage_access_key"
+}
+variable storage_secret_key {
+  description = "storage_secret_key"
+}

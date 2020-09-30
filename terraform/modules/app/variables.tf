@@ -12,3 +12,10 @@ variable "name" {
   description = "Environment name"
   type        = string
 }
+variable "private_key_path" {
+  description = "Path to privat key path"
+}
+variable db_ip_addr {
+  description = "Database IP address"
+  default     = "127.0.0.1"
+}

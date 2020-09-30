@@ -12,3 +12,6 @@ variable "name" {
   description = "Environment name"
   type        = string
 }
+variable "private_key_path" {
+  description = "Path to privat key path"
+}
