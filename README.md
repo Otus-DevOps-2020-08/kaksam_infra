@@ -1,13 +1,24 @@
 # kaksam_infra
 
 kaksam Infra repository
+
+**HW #8**
+
+    * created VPC subnet via terraform and apply to VM
+    * read about `depends_on`
+    * created app image and db image via packer
+    * created modules: app and db
+    * created two environment stage and pro
+    * created bucked to save stages
+    * added provisoner to connect app and db VM
+
 **HW #7**
 
     * install terraform
     * created main.tf for describe instance
     * created outputs.tf fot output prints
-    * created lb.tf for dynamyc creating loadbalancer 
-    * LB was checked 
+    * created lb.tf for dynamyc creating loadbalancer
+    * LB was checked
 
 **HW #6**
 

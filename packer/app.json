@@ -1,0 +1,43 @@
+{
+    "builders": [
+        {
+            "type": "yandex",
+            "service_account_key_file": "{{ user `yc_sa_key_file` }}",
+            "folder_id": "{{ user `yc_folder_id` }}",
+            "source_image_family": "{{ user `yc_image_id` }}",
+            "image_name": "reddit-app-base-{{timestamp}}",
+            "image_family": "reddit-app-base",
+            "ssh_username": "ubuntu",
+            "subnet_id": "e9bsrg4gap54u53tjrih",
+            "use_ipv4_nat": true,
+            "platform_id": "standard-v1"
+        }
+    ],
+    "provisioners": [
+        {
+            "type": "shell",
+            "script": "scripts/install_ruby.sh",
+            "pause_before": "20s",
+            "execute_command": "sudo {{.Path}}"
+        },
+        {
+            "type": "shell",
+            "script": "scripts/deploy.sh",
+            "pause_before": "20s",
+            "execute_command": "sudo {{.Path}}"
+        },
+        {
+            "type": "file",
+            "source": "files/puma.service",
+            "destination": "/tmp/puma.service"
+        },
+        {
+            "type": "shell",
+            "inline": [
+                "sudo mv /tmp/puma.service /etc/systemd/system/puma.service",
+                "sudo systemctl enable puma",
+                "sudo systemctl start puma"
+          ]
+        }
+    ]
+}
