@@ -24,7 +24,7 @@
             "type": "shell",
             "script": "scripts/deploy.sh",
             "pause_before": "20s",
-            "execute_command": "sudo {{.Path}}"
+            "execute_command": "{{.Path}}"
         },
         {
             "type": "file",

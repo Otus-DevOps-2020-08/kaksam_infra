@@ -2,6 +2,11 @@
 
 kaksam Infra repository
 
+**HW #9**
+
+    * Install ansible
+    * Use ad-hoc command and playbooks
+
 **HW #8**
 
     * created VPC subnet via terraform and apply to VM
