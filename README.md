@@ -6,6 +6,7 @@ kaksam Infra repository
 
     * Install ansible
     * Use ad-hoc command and playbooks
+    * use inventory with ini yml and dynamic json
 
 **HW #8**
 
