@@ -2,6 +2,12 @@
 
 kaksam Infra repository
 
+**HW #9**
+
+    * Install ansible
+    * Use ad-hoc command and playbooks
+    * use inventory with ini yml and dynamic json
+
 **HW #8**
 
     * created VPC subnet via terraform and apply to VM
