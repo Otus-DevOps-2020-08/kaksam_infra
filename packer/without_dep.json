@@ -5,18 +5,20 @@
             "service_account_key_file": "{{ user `yc_sa_key_file` }}",
             "folder_id": "{{ user `yc_folder_id` }}",
             "source_image_family": "{{ user `yc_image_id` }}",
-            "image_name": "reddit-app-base-{{timestamp}}",
-            "image_family": "reddit-app-base",
+            "image_name": "reddit-w-dep-base-{{timestamp}}",
+            "image_family": "reddit-w-dep-base",
             "ssh_username": "ubuntu",
             "subnet_id": "e9bsrg4gap54u53tjrih",
             "use_ipv4_nat": true,
             "platform_id": "standard-v1"
         }
     ],
-    "provisioners":[
+    "provisioners": [
         {
-            "type": "ansible",
-            "playbook_file": "ansible/packer_app.yml"
+            "type": "shell",
+            "script": "scripts/install_ruby.sh",
+            "pause_before": "20s",
+            "execute_command": "sudo {{.Path}}"
         }
     ]
 }

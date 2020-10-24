@@ -1,6 +1,12 @@
 # kaksam_infra
 
 kaksam Infra repository
+**HW #10**
+
+    * using: ansible tags, playbooks, templates, hundlers
+    * modules: systemd, copy, templates, git, bundler, apt, apt_key, apt_repository
+    * dynamic vars from dynamic variables
+    * packer + ansible
 
 **HW #9**
 

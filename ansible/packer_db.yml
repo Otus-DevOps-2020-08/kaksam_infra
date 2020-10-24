@@ -1,0 +1,41 @@
+---
+- name: Install MongoDB
+  hosts: all
+  become: true
+  tasks:
+    - name: Install requirements DB
+      apt:
+        update_cache: yes
+        name:
+          - apt-transport-https
+          - libcurl3-gnutls
+          - ca-certificates
+
+    - name: Add key from the URL
+      apt_key:
+        url: https://www.mongodb.org/static/pgp/server-4.2.asc
+        state: present
+
+    - name: Add APT repository
+      apt_repository:
+        repo: deb [ arch=amd64,arm64 ] http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/4.2 multiverse
+        state: present
+
+    - name: apt-get update
+      apt:
+        update_cache: yes
+
+    - name: Install mongodb
+      apt:
+        name: mongodb-org
+        state: present
+
+    - name: Enable mongodb
+      systemd:
+        name: mongod
+        enabled: yes
+
+    - name: Start mongodb
+      service:
+        name: mongod
+        state: started
