@@ -30,19 +30,19 @@ resource "yandex_compute_instance" "app" {
     agent       = false
     private_key = file(var.private_key_path)
   }
-  provisioner "file" {
-    content = templatefile("${path.module}/files/puma.service",
-    { database_url = var.db_ip_addr, })
-    destination = "/tmp/puma.service"
-  }
-
-  provisioner "remote-exec" {
-    inline = [
-      "sudo mv /tmp/puma.service /etc/systemd/system/puma.service",
-      "sudo systemctl daemon-reload",
-      "sudo systemctl restart puma"
-    ]
-  }
+//  provisioner "file" {
+//    content = templatefile("${path.module}/files/puma.service",
+//    { database_url = var.db_ip_addr, })
+//    destination = "/tmp/puma.service"
+//  }
+//
+//  provisioner "remote-exec" {
+//    inline = [
+//      "sudo mv /tmp/puma.service /etc/systemd/system/puma.service",
+//      "sudo systemctl daemon-reload",
+//      "sudo systemctl restart puma"
+//    ]
+//  }
 
   metadata = {
     ssh-keys = "ubuntu:${file(var.public_key_path)}"

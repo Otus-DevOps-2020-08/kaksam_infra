@@ -1,0 +1,13 @@
+---
+- name: Install Ruby
+  hosts: all
+  become: true
+  tasks:
+    - name: Install requirements ruby
+      apt:
+        update_cache: yes
+        name:
+          - git
+          - ruby-full
+          - ruby-bundler
+          - build-essential
