@@ -3,6 +3,15 @@
 kaksam Infra repository
 **HW #10**
 
+    * create ansible roles using ansible-galaxy: app, db
+    * create anvierments for prod and stage
+    * install jdauphant.nginx role from requerment.txt
+    * using vault for encrypt credentional
+    * create dynamic invetory for prod and stage
+    * add validete for packer, ansible and terrafor for travis
+
+**HW #10**
+
     * using: ansible tags, playbooks, templates, hundlers
     * modules: systemd, copy, templates, git, bundler, apt, apt_key, apt_repository
     * dynamic vars from dynamic variables
