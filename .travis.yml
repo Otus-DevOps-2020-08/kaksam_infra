@@ -2,8 +2,9 @@ dist: trusty
 sudo: required
 language: bash
 before_install:
-- curl https://raw.githubusercontent.com/express42/otus-homeworks/2020-08/run.sh |
-  bash
+  - curl https://raw.githubusercontent.com/express42/otus-homeworks/2020-08/run.sh | bash
+  - if [[ ( $TRAVIS_BRANCH == "master" && $TRAVIS_EVENT_TYPE == "push" ) || $TRAVIS_EVENT_TYPE == "pull_request" ]]; then ./play-travis/run.sh; else echo 'skipping test'; fi
+
 notifications:
   slack:
     rooms:
