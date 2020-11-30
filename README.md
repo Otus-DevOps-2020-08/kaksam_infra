@@ -1,7 +1,16 @@
 # kaksam_infra
 
 kaksam Infra repository
-**HW #10**
+**HW #12**
+
+    * install and configuration Vagrant
+    * create VM using Vagrant + provisioning
+    * using exctra_vars for deploy username
+    * install Molecule and Testinfra
+    * Test roles using Molecule and Testinfra
+    * Add provisioning roles to packer
+
+**HW #11**_
 
     * create ansible roles using ansible-galaxy: app, db
     * create anvierments for prod and stage

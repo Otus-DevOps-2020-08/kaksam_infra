@@ -2,3 +2,4 @@
 # defaults file for app
 db_host:  "{{ hostvars['dbserver'].db_host }}"
 env: local
+deploy_user: appuser
